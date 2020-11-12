@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Allest.</title>
+
+    <style>
+        * {box-sizing: border-box;}
+        
+        body { 
+          margin: 0;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        .header {
+          overflow: hidden;
+          background-color: #FFF;
+          padding: 20px 10px;
+        }
+        
+        .header a {
+          float: left;
+          color: black;
+          text-align: center;
+          padding-left: 17px;
+          padding-right: 17px;
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-decoration: none;
+          font-size: 15px; 
+          line-height: 25px;
+          border-radius: 4px;
+        }
+        
+        .header a.logo {
+          font-size: 25px;
+          font-weight: bold;
+        }
+        
+        .header a:hover {
+          background-color: #eeeeee;
+          color: black;
+        }
+        
+        .header a.active {
+          color: rgb(85, 85, 85);
+        }
+        
+        .header-right {
+          float: right;
+        }
+        
+        @media screen and (max-width: 500px) {
+          .header a {
+            display: flex;
+            text-align: left;
+          }
+          
+          .header-right {
+            float: none;
+          }
+
+          .cardbig {
+              display: block;
+          }
+
+        }
+
+        .est {
+            color: #9797FF;
+        }
+     
+        .me {
+            width: 45px;
+            margin-right: 20px;
+            margin-top: auto;
+            border: 1px solid black;
+            display: block;
+            margin-bottom: auto;
+            border-radius: 50%;
+        }
+
+        .bigcard {
+            background-image: url(https://www.richardmeier.com/wp-content/uploads/2019/06/685_1920x1080-min-1.jpg);
+            background-attachment: initial;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+            width: 95%;
+            height: 45vh;
+            margin-right: auto;
+            margin-left: auto;
+            display: block;
+        }
+
+        h2 {
+           top: 25%;
+           left: 80px;
+           position: absolute;
+        }
+
+        .buyrent {
+            background-color: white;
+            width: 130px;
+            height: 30px;
+            border-radius: 3px;
+            top: 40%;
+            left: 80px;
+            position: absolute;
+        }
+
+        .buy {
+            background-color: #9797FF;
+            width: 60px;
+            border-radius: 3px;
+            top: 10%;
+            left: 2%;
+            box-shadow: 0px 2px 5px 0px #9797FF;
+            position: absolute;
+            height: 24px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+        }
+
+        .buy:hover {
+        background-color: #b4b4ff;
+        }
+
+        .buyt {
+            display: block;
+            margin-top: 4px;
+        }
+
+        .rent {
+            width: 60px;
+            border-radius: 3px;
+            top: 10%;
+            left: 51%;
+            position: absolute;
+            height: 23px;
+            text-align: center;
+            color: #9797FF;
+            cursor: pointer;
+        }
+
+        .rent:hover {
+        color: #b4b4ff;
+        }
+
+        .rentt {
+            display: block;
+            margin-top: 4px;
+        }
+
+        .search {
+            background-color: white;
+            border-radius: 3px;
+            height: 40px;
+            top: 47%;
+            left: 80px;
+            width: 280px;
+            position: absolute;
+        }
+
+        input {
+            border: none;
+            border-radius: 3px;
+            width: 82%;
+            height: 99%;
+            font-size: 13px;
+        }
+
+        .fa-search {
+            color: white;
+            box-shadow: 0px 2px 5px 0px #FF8869;
+            text-align: center;
+            background-color: #FF8869;
+            width: 40px;
+            top: 3px;
+            left: 236px;
+            border-radius: 3px;
+            border-radius: 3px;
+            cursor: pointer;
+            float: left;
+            padding-top: 7px;
+            font-size: 17px;
+            height: 85%;
+            position: absolute;
+        }
+
+        .fa-search:hover {
+            background-color: #ffac97;
+        }
+
+        .topneightborhood {
+            left: 40px;
+            position: absolute;
+            font-weight: bold;
+        }
+
+        .topneightborhood2 {
+            font-weight: bold;
+        }
+
+        .paragraph {
+            left: 40px;
+            color: gray;
+            font-size: 13px;
+            position: absolute;
+        }
+
+        .paragraph2 {
+            color: gray;
+            font-size: 13px;
+        }
+
+        .titless {
+            position: absolute;
+            top: 390px;
+            left: 900px;
+        }
+        .card {
+            display: block;
+        }
+
+        .cardimg {
+            border-radius: 20px;
+            width: 230px;
+            margin-top: -15px;
+            height: 230px;
+            margin-left: 40px;
+        }
+
+        .cardimg1 {
+            border-radius: 20px;
+            width: 230px;
+            height: 165px;
+            top: 478px;
+            position: absolute;
+            margin-left: 40px;
+        }
+
+        .test {
+            background-image: linear-gradient(to bottom right, #5e5eff, #a0a0ff, #5e5eff);
+           width: 110px;
+            height: 35px;
+            border-radius: 0px 20px 0px 10px;
+            left: 160px;
+            top: 477px;
+            position: absolute;
+        }
+
+        .test p {
+            color: white;
+            font-size: 13px;
+            padding-left: 11px;
+        }
+
+        .test1 {
+            background-color: #5e5eff;
+            width: 110px;
+            height: 35px;
+            border-radius: 0px 20px 0px 10px;
+            left: 434px;
+            top: 477px;
+            position: absolute;
+        }
+
+        .test1 p {
+            color: white;
+            font-size: 13px;
+            padding-left: 11px;
+        }
+
+        .test2 {
+            background-color: #5e5eff;
+            width: 110px;
+            height: 35px;
+            border-radius: 0px 20px 0px 10px;
+            left: 704px;
+            top: 478px;
+            position: absolute;
+        }
+
+        .test2 p {
+            color: white;
+            font-size: 13px;
+            padding-left: 15px;
+        }
+
+        .blur {
+            width: 195px;
+            height: 65px;
+            background-color: white;
+            position: absolute;
+            border-radius: 10px;
+            left: 58px;
+            padding: 7px 15px;
+            color: #5e5eff;
+            opacity: 80%;  
+            top: 625px;
+        }
+
+        .blur p {
+            color: #5e5eff;
+            position: absolute;
+            font-size: 13px;
+            top: -5px;
+            left: 29px;
+        }
+
+        .namesss {
+            color: #000;
+            position: absolute;
+            font-size: 17px;
+            font-weight: bold;
+            top: 17px;
+            left: 14px;
+        }
+
+        .blur1 {
+            width: 195px;
+            padding: 10px 15px;
+            height: 65px;
+            background-color: white;
+            position: absolute;
+            border-radius: 10px;
+            left: 332px;
+            padding: 7px 15px;
+            color: #5e5eff;
+            opacity: 80%;  
+            top: 625px;
+        }
+
+        .blur1 p {
+            color: #5e5eff;
+            position: absolute;
+            font-size: 13px;
+            top: -5px;
+            left: 29px;
+        }
+
+        .blur2 {
+            width: 205px;
+            color: #5e5eff;
+            height: 60px;
+            padding: 10px 15px;
+            background-color: white;
+            position: absolute;
+            border-radius: 10px;
+            left: 595px;
+            padding: 7px 15px;
+            color: #5e5eff;
+            opacity: 80%;  
+            top: 570px;
+        }
+
+        .blur2 p {
+            color: #5e5eff;
+            position: absolute;
+            font-size: 13px;
+            top: -5px;
+            left: 29px;
+        }
+
+        .seeall {
+            background-color: #FF8869;
+            border-radius: 4px;
+            text-decoration: none;
+            color: white;
+            position: absolute;
+            left: 585px;
+            top: 660px;
+            padding: 10px 23px;
+            cursor: pointer;
+            box-shadow: 0px 3px 5px 0px #ffa38c;
+
+        }
+
+        .seeall:hover {
+            background-color: #ff9d84;
+        }
+
+        .firstsection {
+            width: 28%;
+            position: absolute;
+            left: 900px;
+            top: 478px;
+            height: 20vh;
+            border-radius: 15px;
+            border: 1px solid #5e5eff;
+        }
+
+        .secondsection {
+            width: 28%;
+            position: absolute;
+            left: 900px;
+            top: 640px;
+            height: 20vh;
+            border-radius: 15px;
+            border: 1px solid #5e5eff;
+        }
+
+        .firstimage {
+            width: 100px;
+            height: 130px;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        .secondimage {
+            width: 100px;
+            height: 130px;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        .wena1 {
+            position: absolute;
+            left: 100px;
+            top: 0px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .wena2 {
+            position: absolute;
+            left: 100px;
+            top: 0px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .fa-bath {
+            color: #5e5eff;
+        }
+
+        .fa-bed {
+             color: #5e5eff;
+        }
+
+        .fa-arrows-alt {
+             color: #5e5eff;
+        }
+
+        .fa-bookmark-o {
+             color: #5e5eff; 
+             top: -3px;
+             font-size: 27px;
+             left: 340px;
+             position: absolute;
+             cursor: pointer;
+        }
+        
+        .dwwwaam {
+             color: #5e5eff; 
+             top: -3px;
+             font-size: 27px;
+             left: 340px;
+             position: absolute;
+             cursor: pointer;
+        }
+
+        </style>
+
+</head>
+<body>
+
+    <div class="header">
+        <a href="#default" class="logo">all<b class="est">est.</b></a>
+        <div class="header-right">
+          <a class="active" href="#"> Buy </a>
+          <a href="#"> Rent </a>
+          <a href="#"> Agent </a>
+          <a href="#"> About </a>
+          <img class="me" src="https://1.bp.blogspot.com/-69eUtaFcVvU/Xzzwv8Q-OzI/AAAAAAAACTk/rrDDs8wNqLYaejzuaIEBfXcGgd3lRSLMACLcBGAsYHQ/s640/Pro.jpg" alt="ravin">
+        </div>
+      </div>
+      
+      <div class="bigcard">
+
+      <h2 class="wehelp">We help you find<br>your dream home.</h2>
+
+      <div class="buyrent">
+      
+      <div class="buy">
+      
+        <h5 class="buyt"> Buy </h5>
+
+      </div>
+
+      <div class="rent">
+      
+        <h5 class="rentt"> Rent </h5>
+
+      </div>
+
+      </div>
+
+      <div class="search">
+
+      <input type="text" placeholder="Search for city, Neightborhood, Zip">
+     
+      <i class="fa fa-search"></i>
+
+      </div>
+
+      </div>
+
+      <h3 class="topneightborhood"> Top Neightborhood </h3>
+
+      <br>
+      <br>
+
+      <p class="paragraph">The surroundings are best for your lifestyle </p>
+
+      <br>
+      <br>
+      <br>
+
+      <div class="cardbig">
+      <div class="card">
+
+        <img class="cardimg" src="https://cdn.vox-cdn.com/thumbor/ItMhG3rwV2cr8ywye51DgDcvFCs=/0x0:1800x1800/1200x800/filters:focal(756x756:1044x1044)/cdn.vox-cdn.com/uploads/chorus_image/image/54600681/145PresidentStreet_Hero.0.jpg" alt="New York">
+        <img class="cardimg" src="https://shared-s3.property.ca/public/images/buildings/1393/california-condos-165-legion-rd-n-normal-2.jpg" alt="California">
+        <img class="cardimg1" src="https://miro.medium.com/max/4800/1*CCF_KY98ob981C9zXZZxvg.jpeg" alt="Chicago">
+
+      </div>
+        <br>
+
+<a class="seeall" href="#"> See All </a>
+
+      <br>
+      <br>
+
+
+<div class="test">
+
+    <p>$1862 / Sq. Ft.</p>
+
+</div>
+
+<div class="test1">
+
+    <p>$1862 / Sq. Ft.</p>
+
+</div>
+
+<div class="test2">
+
+    <p>$862 / Sq. Ft.</p>
+
+</div>
+
+
+
+<div class="blur">
+
+    <i class="fa fa-map-marker"></i>
+
+    <p> New York, NY </p>
+    <h1 class="namesss"> Carroll Gardens </h1>
+
+</div>
+
+
+
+<div class="blur1">
+
+    <i class="fa fa-map-marker"></i>
+    <p> California, CA </p>
+    <h1 class="namesss"> Napa Countyurg </h1>
+
+
+</div>
+
+
+
+<div class="blur2">
+
+    <i class="fa fa-map-marker"></i>
+    <p> Chicago, IL </p>
+    <h1 class="namesss"> Murray Hill </h1>
+
+
+</div>
+
+<div class="titless">
+
+<h3 class="topneightborhood2"> Recommended for you </h3>
+
+      <p class="paragraph2">The surroundings are best for your lifestyle </p>
+
+</div>
+
+      <br>
+      <br>
+      <br>
+
+      <div class="firstsection">
+
+        <img class="firstimage" src="https://1.bp.blogspot.com/-tt6yD0Ho5SY/X60kaAwWTmI/AAAAAAAACok/94A_zFqUlUwyGvIwLQG3-YcqvJBHhTClQCLcBGAsYHQ/s320/Most_Beautiful_Houses_In_The_World_House_M_featured_on_architecture_beast_05.jpg" alt="first image">
+        <div class="wena1">
+        <p> $798,500 </p>
+        <p> 121 East 38th Street </p>
+        <p> Manhattan, NY 10016 </p>
+        <p><i class="fa fa-bath"></i> 2 Baths &nbsp &nbsp &nbsp <i class="fa fa-bed"></i> 3 Beds &nbsp &nbsp &nbsp <i class="fa fa-arrows-alt"></i> 1,500 sqft </p>
+        </div>
+        <i class="fa fa-bookmark-o"></i>
+
+      </div>
+
+      <br>
+
+      <div class="secondsection">
+
+        <img class="secondimage" src="https://1.bp.blogspot.com/-LfO0XEIefaw/X60kZ7rH2EI/AAAAAAAACog/Wr7oN4A0oC8DOWIlFCRbHNlptyTeSZjfwCLcBGAsYHQ/s320/20201112_150013.jpg" alt="second image">
+        <div class="wena2">
+        <p> $295,000 </p>
+        <p> 2656 Sunny View Dr </p>
+        <p> Illiopolis, IL 62539 </p>
+        <p><i class="fa fa-bath"></i> 1 Baths &nbsp &nbsp &nbsp <i class="fa fa-bed"></i> 2 Beds &nbsp &nbsp &nbsp <i class="fa fa-arrows-alt"></i> 900 sqft </p>
+        </div>
+        <i class="fa fa-bookmark-o dwwwaam"></i>
+
+      </div>
+</div>
+      </div>
+
+      <br>
+      <br>
+
+</body>
+</html>
